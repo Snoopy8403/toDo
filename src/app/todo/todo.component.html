@@ -1,13 +1,18 @@
 <div class="todo-app">
     <h1>ToDo Lista</h1>
-    <div class="new-task">
-        <input [(ngModel)]="newTaskTitle" placeholder="Új feladat..." />
-        <select [(ngModel)]="selectedOption">
-            <option *ngFor="let level of levels" [value]="level.id">
-                {{ level.name }}
-            </option>
-        </select>
-        <button (click)="addTask()">Hozzáadás</button>
+    <div>
+        <mat-form-field>
+            <mat-label>Új feladat</mat-label>
+            <input matInput [(ngModel)]="newTaskTitle" />
+            <mat-label>Szint</mat-label>
+            <mat-select [(ngModel)]="selectedOption">
+                <mat-option *ngFor="let level of levels" [value]="level.id">
+                    {{ level.name }}
+                </mat-option>
+            </mat-select>
+            <button (click)="addTask()" mat-raised-button color="accent">Hozzáadás</button>
+        </mat-form-field>
+
     </div>
     <ul>
         <li *ngFor="let task of tasks">
