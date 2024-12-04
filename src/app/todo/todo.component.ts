@@ -7,6 +7,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-todo',
@@ -18,6 +21,9 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCardModule,
   ],
   templateUrl: './todo.component.html',
   styleUrl: './todo.component.scss',
@@ -31,6 +37,7 @@ export class TodoComponent implements OnInit {
     { id: 3, name: 'Blokkoló' },
   ];
   selectedOption?: number;
+  deadLine?: '';
 
   constructor(private readonly todoService: TodoService) {}
 
@@ -45,6 +52,7 @@ export class TodoComponent implements OnInit {
       id: Date.now(),
       title: this.newTaskTitle.trim(),
       level: this.selectedOption,
+      deadLine: this.deadLine,
       completed: false,
     };
 

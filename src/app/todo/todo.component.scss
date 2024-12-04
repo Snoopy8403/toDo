@@ -1,24 +1,24 @@
 @use "@angular/material" as mat;
 
 .todo-app {
-  width: 300px;
+  width: 90%;
   margin: 0 auto;
   font-family: Arial, sans-serif;
 }
 
-.new-task {
+.container {
   display: flex;
-  margin-bottom: 1rem;
+  gap: 20px; /* Térköz a két oszlop között */
 }
 
-.new-task input {
-  flex: 1;
-  padding: 0.5rem;
-  margin-right: 0.5rem;
+.create {
+  flex: 6; /* Bal oldali oszlop méretezése */
+  max-width: 400px;
 }
 
-.new-task button {
-  padding: 0.5rem 1rem;
+.list {
+  width: 100%;
+  flex: 6; /* Jobb oldali oszlop méretezése */
 }
 
 ul {
@@ -29,11 +29,24 @@ ul {
 li {
   display: flex;
   align-items: center;
+  width: 100%;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
+}
+
+.list-card {
+  margin-top: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.list-card-content {
+  display: flex;
+  justify-content: space-between;
 }
 
 .completed {
   text-decoration: line-through;
-  color: gray;
+  color: grey;
 }
